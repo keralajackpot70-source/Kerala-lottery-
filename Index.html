@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kerala state lottery - live booking</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Tik-Tik (Blinking) Animation Fixed */
+        @keyframes tiktik {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.2; transform: scale(0.92); }
+        }
+        .live-blink {
+            animation: tiktik 0.8s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 flex justify-center items-center min-h-screen p-4">
+
+    <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+        
+        <div class="p-3 bg-slate-50 border-b border-slate-200">
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-200 flex justify-between items-center bg-gradient-to-r from-white to-amber-50/20">
+                <div>
+                    <p class="text-slate-800 font-bold text-base">
+                        <span id="live-user-name" class="text-amber-700 font-extrabold">rakesh</span> 
+                        <span class="text-slate-500 font-normal text-sm lowercase mx-0.5">from</span>
+                        <span id="live-user-state" class="text-slate-700 font-bold">manipur</span>
+                    </p>
+                    <p id="live-user-tickets" class="text-sm text-slate-600 font-semibold mt-0.5">booked 🎟️ (3) tickets</p>
+                </div>
+                <div id="live-user-paid" class="text-amber-800 font-bold text-lg bg-amber-50 px-3 py-1 rounded-xl border border-amber-200">
+                    ₹447 paid
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-3 my-2 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 text-amber-400 font-bold p-3 rounded-xl shadow-md border border-amber-500/30 flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+                <span class="flex items-center gap-1 bg-black/40 px-2 py-0.5 rounded-full border border-amber-500/30 text-[10px] font-black uppercase tracking-widest text-white shadow-inner">
+                    <span class="h-2 w-2 rounded-full bg-red-500 live-blink inline-block shadow-[0_0_8px_#ef4444]"></span>
+                    live
+                </span>
+            </div>
+            <span id="sub-banner-text" class="text-xs font-semibold tracking-wide text-right text-slate-200">
+                kerala state lottery live result today
+            </span>
+        </div>
+
+        <div class="mx-3 my-2 flex items-center justify-between border-2 border-slate-800 rounded-2xl p-3 bg-slate-50">
+            <div class="flex items-center gap-2">
+                <span class="flex items-center gap-1 bg-slate-800 text-amber-400 text-[10px] px-2 py-0.5 rounded-md font-black uppercase tracking-wider shadow-md border border-amber-500/20">
+                    <span class="h-1.5 w-1.5 rounded-full bg-red-500 live-blink inline-block"></span>
+                    live
+                </span>
+                <span id="result-label" class="text-sm font-bold text-slate-700">today's result:</span>
+            </div>
+            <div id="live-ticket-ticker" class="bg-slate-200 text-slate-800 font-bold px-3 py-1 rounded-xl tracking-wider border border-slate-300 text-base min-w-[110px] text-center">
+                KL-582910
+            </div>
+        </div>
+
+        <hr class="border-slate-200 my-3">
+
+        <div class="p-4 space-y-4">
+            
+            <div>
+                <label id="lang-label" class="block text-xs font-bold text-slate-600 tracking-wider mb-1">👉 Choose Your language 👈</label>
+                <div class="relative flex items-center">
+                    <span class="absolute left-3 text-slate-400">🌐</span>
+                    <select id="langSelect" class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-10 pr-4 text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-slate-800 appearance-none">
+                        <option value="en">english</option>
+                        <option value="hi">hindi (हिंदी)</option>
+                        <option value="bn">bengali (বাংলা)</option>
+                        <option value="te">telugu (తెలుగు)</option>
+                        <option value="mr">marathi (मराठी)</option>
+                        <option value="ta">tamil (தமிழ்)</option>
+                        <option value="gu">gujarati (ગુજરાતી)</option>
+                        <option value="kn">kannada (ಕನ್ನಡ)</option>
+                        <option value="ml">malayalam (മലയാളം)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label id="name-label" class="block text-xs font-bold text-slate-600 tracking-wider mb-1">👉 INTER YOUR NAME 👈</label>
+                <div class="relative flex items-center">
+                    <span class="absolute left-3 text-slate-400">👤</span>
+                    <input type="text" id="fullName" placeholder="enter your name" class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-10 pr-4 text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-800">
+                </div>
+            </div>
+
+            <div>
+                <label id="whatsapp-label" class="block text-xs font-bold text-slate-600 tracking-wider mb-1">📲enter your WhatsApp number 📱</label>
+                <div class="relative flex items-center">
+                    <span class="absolute left-3 text-slate-400">📞</span>
+                    <input type="tel" id="whatsappNum" placeholder="enter mobile number" class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-10 pr-4 text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-800">
+                </div>
+            </div>
+
+            <div>
+                <label id="ticket-section-label" class="block text-xs font-bold text-slate-600 tracking-wider mb-2">🎉 Choose Your lucky Ticket Number 🎉</label>
+                <div id="tickets-grid" class="grid grid-cols-2 gap-2 max-h-48 overflow-y-auto p-1 border border-slate-200 rounded-xl bg-slate-50">
+                    </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex justify-between items-center text-sm font-bold text-slate-700">
+                <div>
+                    <span id="selected-txt">selected:</span> 
+                    <span id="ticketCount" class="text-amber-700">0</span> 
+                    <span id="tickets-unit-txt">ticket(s)</span>
+                </div>
+                <div class="text-lg">
+                    <span id="amount-txt">amount:</span> 
+                    <span id="totalAmount" class="text-slate-900">₹0</span>
+                </div>
+            </div>
+
+            <button onclick="submitBooking()" class="w-full bg-slate-800 text-amber-400 border border-amber-500/40 font-bold py-3.5 rounded-xl shadow-lg hover:bg-slate-900 transition flex justify-center items-center gap-2 cursor-pointer">
+                📲 <span id="btn-text">confirm payment & get tickets</span>
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+        // --- 1. DATA POOLS IN SMALL LETTERS ---
+        const states28 = ["andhra pradesh", "arunachal pradesh", "assam", "bihar", "chhattisgarh", "goa", "gujarat", "haryana", "himachal pradesh", "jharkhand", "karnataka", "kerala", "madhya pradesh", "maharashtra", "manipur", "meghalaya", "mizoram", "nagaland", "odisha", "punjab", "rajasthan", "sikkim", "tamil nadu", "telangana", "tripura", "uttar pradesh", "uttarakhand", "west bengal"];
+        
+        const girlNames = ["kiran", "priya", "sneha", "anjali", "neha", "sunita", "pooja", "jyoti", "meena", "aarti", "divya", "kajal", "ritu", "swati", "deepika", "kavita", "mamta", "nisha", "preeti", "rashmi", "shweta", "soniya", "tanu", "vaishali", "ananya", "bhavna", "chanda", "geeta", "heena", "isha", "komal", "lata", "monika", "nidhi", "payal", "radha", "sakshi", "tanya", "urmila", "varsha", "yashika", "rani", "sapna", "shilpa", "kriti", "alka", "amrita", "anu", "dimple", "pinki"];
+        
+        const boyNames = ["rakesh", "amit", "rahul", "vikram", "deepak", "suresh", "rohan", "arjun", "rajesh", "karan", "sanjay", "vijay", "ajay", "manish", "sunil", "anil", "sandeep", "ravi", "manoj", "alok", "pankaj", "vikas", "gaurav", "ashish", "sachin", "nitin", "rohit", "sumit", "abhishek", "vivek", "sanjeev", "raj", "aman", "vinay", "dinesh", "harish", "pradeep", "kamal", "mahesh", "mukesh", "naresh", "om", "prakash", "ramesh", "satish", "tarun", "umesh", "yash", "vaibhav", "varun", "abhay", "aditya", "akash", "anand", "ankit", "anshul", "arpit", "aryan", "ayush", "bhupendra", "chetan", "dev", "dheeraj", "gopal", "hemant", "himanshu", "inder", "jagdish", "jitendra", "kapil", "krishna", "kunal", "lalit", "lokesh", "mayank", "mohit", "narendra", "naveen", "pawan", "prashant", "rajendra", "raman", "ranveer", "rishabh", "ritesh", "saurabh", "shubham", "shyam", "sourabh", "sudhir", "tushar", "utkarsh", "vimal", "vineet", "vipul", "vishal", "yogesh"];
+
+        let notificationCounter = 0;
+
+        function updateLiveNotificationBar() {
+            let randomName = "";
+            notificationCounter++;
+
+            if (notificationCounter % 6 === 0) {
+                randomName = girlNames[Math.floor(Math.random() * girlNames.length)];
+            } else {
+                randomName = boyNames[Math.floor(Math.random() * boyNames.length)];
+            }
+
+            const randomState = states28[Math.floor(Math.random() * states28.length)];
+            const randomTickets = Math.floor(Math.random() * 10) + 1; 
+            const ticketCost = 149;
+            const totalPaid = randomTickets * ticketCost;
+
+            document.getElementById('live-user-name').innerText = randomName;
+            document.getElementById('live-user-state').innerText = randomState;
+            document.getElementById('live-user-tickets').innerText = `booked 🎟️ (${randomTickets}) tickets`;
+            document.getElementById('live-user-paid').innerText = `₹${totalPaid} paid`;
+        }
+        setInterval(updateLiveNotificationBar, 5000);
+
+        // --- 2. LANGUAGE TRANSLATION DICTIONARY IN SMALL LETTERS ---
+        const languageData = {
+            en: {
+                banner: "kerala state lottery live result today",
+                result: "today's result:",
+                langLabel: "👉 Choose Your language 👈",
+                nameLabel: "👉 INTER YOUR NAME 👈",
+                namePlaceholder: "enter your name",
+                whatsappLabel: "📲enter your WhatsApp number 📱",
+                whatsappPlaceholder: "enter mobile number",
+                ticketSection: "🎉 Choose Your lucky Ticket Number 🎉",
+                selected: "selected:",
+                unit: "ticket(s)",
+                amount: "amount:",
+                btn: "confirm payment & get tickets"
+            },
+            hi: {
+                banner: "केरल स्टेट लॉटरी लाइव result आज",
+                result: "आज का रिजल्ट:",
+                langLabel: "👉 Choose Your language 👈",
+                nameLabel: "👉 INTER YOUR NAME 👈",
+                namePlaceholder: "अपना नाम दर्ज करें",
+                whatsappLabel: "📲enter your WhatsApp number 📱",
+                whatsappPlaceholder: "मोबाइल नंबर दर्ज करें",
+                ticketSection: "🎉 Choose Your lucky Ticket Number 🎉",
+                selected: "चयनित:",
+                unit: "टिकट",
+                amount: "कुल राशि:",
+                btn: "भुगतान की पुष्टि करें और टिकट प्राप्त करें"
+            },
+            bn: {
+                banner: "কেরালা স্টেট লটারি লাইভ রেজাল্ট আজ",
+                result: "আজকের ফলাফল:",
+                langLabel: "👉 Choose Your language 👈",
+                nameLabel: "👉 INTER YOUR NAME 👈",
+                namePlaceholder: "আপনার নাম লিখুন",
+                whatsappLabel: "📲enter your WhatsApp number 📱",
+                whatsappPlaceholder: "মোবাইল নম্বর লিখুন",
+                ticketSection: "🎉 Choose Your lucky Ticket Number 🎉",
+                selected: "নির্বাচিত:",
+                unit: "টিকিট",
+                amount: "টাকা:",
+                btn: "পেমেন্ট নিশ্চিত করুন এবং টিকিট পান"
+            },
+            te: {
+                banner: "కేరళ స్టేట్ లాటరీ లైవ్ రిజల్ట్ ఈరోజు",
+                result: "ఈరోజు ఫలితం:",
+                langLabel: "👉 Choose Your language 👈",
+                nameLabel: "👉 INTER YOUR NAME 👈",
+                namePlaceholder: "మీ పేరు నమోదు చేయండి",
+                whatsappLabel: "📲enter your WhatsApp number 📱",
+                whatsappPlaceholder: "ಮೊಬైల్ ನಂಬర్ నమోదు చేయండి",
+                ticketSection: "🎉 Choose Your lucky Ticket Number 🎉",
+                selected: "ఎంచుకోబడింది:",
+                unit: "టికెట్లు",
+                amount: "ಮೊತ್ತಂ:",
+                btn: "ಜನ್ಮದಿನ ಪಾವತಿಯನ್ನು ఖరిదపడిసి & ಟಿಕೇಟುಗಳನ್ನು ಪಡೆಯಿರಿ"
+            },
+            mr: {
+                banner: "केरळ state लॉटरी लाईव्ह निकाल आज",
+                result: "आजचा निकाल:",
+                langLabel: "👉 Choose Your language 👈",
+                nameLabel: "👉 INTER YOUR NAME 👈",
+                namePlaceholder: "तुमचे नाव टाका",
+                whatsappLabel: "📲enter your WhatsApp number 📱",
+                whatsappPlaceholder: "मोबाईल नंबर टाका",
+                ticketSection: "🎉 Choose Your lucky Ticket Number 🎉",
+                selected: "निवडलेले:",
+                unit: "तिकीट",
+                amount: "एकूण रक्कम:",
+                btn: "पेमेंटची पुष्टी करा आणि तिकीट मिळवा"
+            },
+            ta: {
+                banner: "கேரளா மாநில லாட்டரி நேரடி முடிவு இன்று",
+                result: "இன்றைய முடிவு:",
+                langLabel: "👉 Choose Your language 👈",
+                nameLabel: "👉 INTER YOUR NAME 👈",
+                namePlaceholder: "உங்கள் பெயரை உள்ளிடவும்",
+                whatsappLabel: "📲enter your WhatsApp number 📱",
+                whatsappPlaceholder: "மொபைல் எண்ணை உள்ளிடவும்",
+                ticketSection: "🎉 Choose Your lucky Ticket Number 🎉",
+                selected: "தேர்ந்தெடுக்கப்பட்டது:",
+                unit: "டிக்கெட்",
+                amount: "தொகை:",
+                btn: "பணப்பరిമാற்றத்தை உறுதிசெய்து டிக்கೆட்டுகளைப் பெறுங்கள்"
+            },
+            gu: {
+                banner: "કેરળ સ્ટેટ લોટરી લાઈવ રિઝલ્ટ આજે",
+                result: "આજનું પરિણામ:",
+                langLabel: "👉 Choose Your language 👈",
+                nameLabel: "👉 INTER YOUR NAME 👈",
+                namePlaceholder: "તમારું નામ દાખલ કરો",
+                whatsappLabel: "📲enter your WhatsApp number 📱",
+                whatsappPlaceholder: "મોબાઈલ નંબર દાખલ કરો",
+                ticketSection: "🎉 Choose Your lucky Ticket Number 🎉",
+                selected: "પસંદ કરેલ:",
+                unit: "ટિકિટ",
+                amount: "રકમ:",
+                btn: "ચુકવણીની પુષ્ટિ કરો અને ટિકિટ મેળવો"
+            },
+            kn: {
+                banner: "ಕೇರಳ ರಾಜ್ಯ ಲಾಟರಿ ಲೈವ್ ರಿಸಲ್ಟ್ ಇಂದು",
+                result: "ಇಂದಿನ ಫಲಿತಾಂಶ:",
+                langLabel: "👉 Choose Your language 👈",
+                nameLabel: "👉 INTER YOUR NAME 👈",
+                namePlaceholder: "ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+                whatsappLabel: "📲enter your WhatsApp number 📱",
+                whatsappPlaceholder: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+                ticketSection: "🎉 Choose Your lucky Ticket Number 🎉",
+                selected: "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ:",
+                unit: "ಟಿಕೆಟ್",
+                amount: "ಮೊತ್ತ:",
+                btn: "ಪಾವತಿಯನ್ನು ಖಚಿತಪಡಿಸಿ ಮತ್ತು ಟಿಕೆಟ್‌ಗಳನ್ನು ಪಡೆಯಿರಿ"
+            },
+            ml: {
+                banner: "കേരള സംസ്ഥാന ലോട്ടറി തത്സമയ ഫലം ഇന്ന്",
+                result: "ഇന്നത്തെ ഫലം:",
+                langLabel: "👉 Choose Your language 👈",
+                nameLabel: "👉 INTER YOUR NAME 👈",
+                namePlaceholder: "നിങ്ങളുടെ പേര് നൽകുക",
+                whatsappLabel: "📲enter your WhatsApp number 📱",
+                whatsappPlaceholder: "മൊബൈൽ നമ്പർ നൽകുക",
+                ticketSection: "🎉 Choose Your lucky Ticket Number 🎉",
+                selected: "തിരഞ്ഞെടുത്തു:",
+                unit: "ടിക്കറ്റ്",
+                amount: "തുക:",
+                btn: "പെയ്മെന്റ് സ്ഥിരീകരിച്ച് ടിക്കറ്റുകൾ നേടുക"
+            }
+        };
+
+        // --- 3. LIVE LANGUAGE SWITCHER ---
+        document.getElementById('langSelect').addEventListener('change', function() {
+            const lang = this.value;
+            const data = languageData[lang] || languageData['en'];
+
+            document.getElementById('sub-banner-text').innerText = data.banner;
+            document.getElementById('result-label').innerText = data.result;
+            document.getElementById('lang-label').innerText = data.langLabel;
+            document.getElementById('name-label').innerText = data.nameLabel;
+            document.getElementById('fullName').placeholder = data.namePlaceholder;
+            document.getElementById('whatsapp-label').innerText = data.whatsappLabel;
+            document.getElementById('whatsappNum').placeholder = data.whatsappPlaceholder;
+            document.getElementById('ticket-section-label').innerText = data.ticketSection;
+            document.getElementById('selected-txt').innerText = data.selected;
+            document.getElementById('tickets-unit-txt').innerText = data.unit;
+            document.getElementById('amount-txt').innerText = data.amount;
+            document.getElementById('btn-text').innerText = data.btn;
+        });
+
+        // --- 4. LIVE 3-SECOND TICKET TICKER (CAPITAL KL) ---
+        setInterval(() => {
+            const randomNumber = Math.floor(100000 + Math.random() * 900000);
+            document.getElementById('live-ticket-ticker').innerText = `KL-${randomNumber}`;
+        }, 3000);
+
+        // --- 5. GENERATING UNIQUE TICKET NUMBERS WITH CAPITAL PREFIX (KL) ---
+        const ticketsGrid = document.getElementById('tickets-grid');
+        let selectedTickets = [];
+        const ticketPrice = 149;
+
+        for (let i = 1; i <= 200; i++) {
+            const randomDigits = Math.floor(100000 + Math.random() * 900000);
+            const ticketID = `KL${randomDigits}`;
+            
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'border-2 border-dashed border-slate-300 text-slate-700 font-bold p-2 rounded-xl text-center hover:bg-slate-100 transition text-sm flex items-center justify-center gap-1';
+            btn.innerHTML = `🎫 <span>${ticketID}</span>`;
+            
+            btn.onclick = function() {
+                const index = selectedTickets.indexOf(ticketID);
+                if (index > -1) {
+                    selectedTickets.splice(index, 1);
+                    this.className = 'border-2 border-dashed border-slate-300 text-slate-700 font-bold p-2 rounded-xl text-center hover:bg-slate-100 transition text-sm flex items-center justify-center gap-1';
+                } else {
+                    selectedTickets.push(ticketID);
+                    this.className = 'bg-slate-800 text-amber-400 font-bold p-2 rounded-xl text-center border-2 border-solid border-slate-800 transition text-sm flex items-center justify-center gap-1';
+                }
+                document.getElementById('ticketCount').innerText = selectedTickets.length;
+                document.getElementById('totalAmount').innerText = `₹${selectedTickets.length * ticketPrice}`;
+            };
+            ticketsGrid.appendChild(btn);
+        }
+
+        // --- 6. SUBMIT LOGIC ---
+        function submitBooking() {
+            const rawName = document.getElementById('fullName').value || "rakesh kumar";
+            const userWhatsapp = document.getElementById('whatsappNum').value || "8292439299";
+            const totalAmount = selectedTickets.length * ticketPrice;
+            
+            const myWhatsappNumber = "8292439299"; 
+
+            if(selectedTickets.length === 0) {
+                alert("please select at least 1 ticket!");
+                return;
+            }
+
+            const italicName = `_${rawName.toLowerCase()}_`;
+
+            const message = `*NEW KERALA LOTTERY BOOKING*\n\n*🎉 Booking Successful 🎉*\n\n👤 *Name: ${italicName}*\n\n📞 *WhatsApp:* *${userWhatsapp}*\n\n🎟️ *Selected Tickets (${selectedTickets.length}):*\n*${selectedTickets.join(', ')}*\n\n💰 *Total Amount:* *₹${totalAmount}*\n\n*You will pay now ticket price ${totalAmount}*`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.location.href = `https://api.whatsapp.com/send?phone=91${myWhatsappNumber}&text=${encodedMessage}`;
+        }
+    </script>
+</body>
+</html>
